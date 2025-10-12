@@ -1,8 +1,8 @@
 function ProfileParagraph({ label, title }) {
   return (
-    <div>
-      <strong>{label}:</strong>
-      <p>{title}</p>
+    <div className="mb-3">
+      <strong className="text-muted small">{label}:</strong>
+      <p className="mb-0 mt-1 font-weight-normal">{title}</p>
     </div>
   );
 }
