@@ -20,6 +20,7 @@ function ProfileGrid({ people, columns = 3 }) {
         {people.map(person => (
           <div key={person.id} className={getColumnClass()}>
             <ProfileCard 
+              id={person.id}
               name={person.name} 
               email={person.email} 
               birthDate={person.birthDate} 

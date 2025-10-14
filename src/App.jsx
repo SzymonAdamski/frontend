@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import ProfileGrid from './component/ProfileGrid';
-import { people } from '../module-data';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import RootLayout from './layouts/RootLayout';
+import Home from './pages/Home';
+import Lab01 from './pages/lab01';
+import Lab02 from './pages/Lab02';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container-fluid bg-light py-5">
-        <div className="text-center mb-5">
-          <h1 className="display-4 text-primary font-weight-bold">Lista Profili Użytkowników</h1>
-          <p className="lead text-muted">Przegląd wszystkich zarejestrowanych użytkowników</p>
-        </div>
-        <ProfileGrid people={people} columns={3} />
-      </div>
-    </div>
+    <Routes>
+      <Route element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="lab01" element={<Lab01 />} />
+        <Route path="lab02" element={<Lab02 />} />
+        <Route path="lab02/:id" element={<Lab02 />} />
+        <Route path="/*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
 

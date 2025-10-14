@@ -90,7 +90,7 @@ fs.readFile('./names.txt', 'utf8', (err, data) => {
     content += "];"
     
     // Zapis łańcucha do pliku 
-    fs.writeFile('module-data.js', content, (err) => {
+    fs.writeFile('./module-data.js', content, (err) => {
         if (err) {
            console.error('Błąd zapisu pliku:', err);
            return;

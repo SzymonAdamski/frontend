@@ -1,6 +1,7 @@
 import ProfileParagraph from './ProfileParagraph';
+import { Link } from 'react-router-dom';
 
-function ProfileCard({ name, email, phone, birthDate }) {
+function ProfileCard({ id, name, email, phone, birthDate }) {
   return (
       <div className="card h-100 shadow-sm">
         <div className="card-body">
@@ -10,6 +11,14 @@ function ProfileCard({ name, email, phone, birthDate }) {
           <ProfileParagraph label="Email" title={email}/>
           <ProfileParagraph label="Telefon" title={phone}/>
           <ProfileParagraph label="Data urodzin" title={birthDate}/>
+          
+          {id && (
+            <div className="text-center mt-3">
+              <Link to={`/lab02/${id}`} className="btn btn-primary btn-sm">
+                Zobacz szczegóły
+              </Link>
+            </div>
+          )}
         </div>
       </div>
   );
