@@ -1,0 +1,51 @@
+.navbar {
+  backdrop-filter: blur(10px) !important;
+  background: rgba(13, 110, 253, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-brand {
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1) rotate(-2deg);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+  border-radius: 8px;
+  padding: 8px 15px !important;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.nav-link:hover::before {
+  width: 80%;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+  font-weight: bold;
+}

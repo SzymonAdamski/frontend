@@ -1,4 +1,5 @@
 import React from 'react';
+import './RatingBar.css';
 
 function RatingBar({ rate = 0 }) {
   const totalStars = 10;
@@ -9,16 +10,11 @@ function RatingBar({ rate = 0 }) {
         <span
           key={index}
           className={`star ${index < rate ? 'filled' : 'empty'}`}
-          style={{
-            fontSize: '16px',
-            color: index < rate ? '#ffc107' : '#e9ecef',
-            marginRight: '2px',
-          }}
         >
           ★
         </span>
       ))}
-      <span className="ms-2 small text-muted">({rate}/10)</span>
+      <span className="ms-2 small rating-text">({rate}/10)</span>
     </div>
   );
 }

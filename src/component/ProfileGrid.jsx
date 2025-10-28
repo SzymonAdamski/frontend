@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import ProfileCard from './ProfileCard';
+import AppContext from '../data/AppContext';
 import './ProfileGrid.css';
 
-function ProfileGrid({ people, columns = 3 }) {
+function ProfileGrid({ columns = 3 }) {
+  const context = useContext(AppContext);
+  const items = context.items;
+
   // Tworzymy klasę Bootstrap dla kolumn na podstawie parametru columns
   const getColumnClass = () => {
     switch(columns) {
@@ -17,7 +22,7 @@ function ProfileGrid({ people, columns = 3 }) {
   return (
     <div className="container-fluid py-4">
       <div className="row g-4 justify-content-center">
-        {people.map(person => (
+        {items.map(person => (
           <div key={person.id} className={getColumnClass()}>
             <ProfileCard 
               id={person.id}

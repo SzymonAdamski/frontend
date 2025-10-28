@@ -1,9 +1,25 @@
 import { useParams } from 'react-router-dom';
-import { people } from '../../module-data';
+import { useEffect, useContext } from 'react';
 import ProfileCard from '../component/ProfileCard';
+import AppContext from '../data/AppContext';
 
 function Lab02() {
   const { id } = useParams();
+  const context = useContext(AppContext);
+  const items = context.items;
+
+  useEffect(() => {
+    if (id) {
+      const person = items.find(p => p.id === parseInt(id));
+      if (person) {
+        document.title = `${person.name} - Laboratorium 2`;
+      } else {
+        document.title = 'Nie znaleziono - Laboratorium 2';
+      }
+    } else {
+      document.title = 'Laboratorium 2 - WSEI App';
+    }
+  }, [id, items]);
 
   // Sprawdzenie czy parametr id został przekazany
   if (!id) {
@@ -18,7 +34,7 @@ function Lab02() {
   }
 
   // Wyszukanie osoby po id
-  const person = people.find(p => p.id === parseInt(id));
+  const person = items.find(p => p.id === parseInt(id));
 
   // Sprawdzenie czy osoba została znaleziona
   if (!person) {
@@ -28,7 +44,7 @@ function Lab02() {
           <h4>Nie znaleziono osoby o tym identyfikatorze</h4>
           <p>Osoba o ID <strong>{id}</strong> nie istnieje w bazie danych.</p>
           <small className="text-muted">
-            Dostępne ID: {people.map(p => p.id).join(', ')}
+            Dostępne ID: {items.map(p => p.id).join(', ')}
           </small>
         </div>
       </div>

@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 function NotFound() {
+  useEffect(() => {
+    document.title = '404 - Nie znaleziono strony';
+  }, []);
+
   return (
     <div className="container py-5">
       <div className="text-center">

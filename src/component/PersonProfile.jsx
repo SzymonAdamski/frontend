@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Button, ButtonGroup, Form } from 'react-bootstrap';
 import RatingBar from './RatingBar';
+import AppContext from '../data/AppContext';
+import './PersonProfile.css';
 
-function PersonProfile({ id, name, email, phone, birthDate, className, rating = 0, isChecked = false, dispatch }) {
+function PersonProfile({ id, name, email, phone, birthDate, className, rating = 0, isChecked = false }) {
+  const context = useContext(AppContext);
+  const dispatch = context.dispatch;
 
-  // Funkcja obsługi przycisku Edit
+  //Edita ni ma jeszcze logika jest
   const handleEditClick = () => {
     console.log(`Edytuj osobę: ${name} (ID: ${id})`);
-    // Tutaj będzie implementacja formularza edycji na następnych zajęciach
-    alert(`Formularz edycji dla ${name} nie ma i nie będzie ¯|_(ツ)_/¯`);
+    // Tutaj będzie się implementować 
+    alert(`Formularz edycji dla ${name} nie ma`);
   };
 
   return (
     <Card 
       style={{ width: '20rem' }} 
-      className={`border mb-3 p-2 ${isChecked ? 'border-primary bg-light' : ''} ${className || ''}`} 
+      className={`person-profile-card mb-3 p-2 ${isChecked ? 'checked' : ''} ${className || ''}`} 
       key={id}
     >
       <Card.Body>
@@ -45,14 +49,14 @@ function PersonProfile({ id, name, email, phone, birthDate, className, rating = 
 
         <ButtonGroup size="sm" className="w-100 mb-2">
           <Button 
-            variant="outline-primary" 
+            className="profile-button-gradient"
             onClick={handleEditClick} 
             title="Edytuj"
           >
-            Edit
+             Edit
           </Button>
           <Button 
-            variant="outline-success" 
+            className="profile-button-success"
             onClick={() => {
               dispatch({
                 type: "rate",
@@ -63,16 +67,15 @@ function PersonProfile({ id, name, email, phone, birthDate, className, rating = 
             }} 
             title="Zwiększ ranking"
           >
-            Rate
+           Rate
           </Button>
         </ButtonGroup>
         
         <Button 
-          variant="outline-danger" 
-          size="sm" 
-          className="w-100" 
+          className="profile-button-danger w-100"
+          size="sm"
           onClick={() => {
-            if (window.confirm(`Czy na pewno chcesz usunąć ${name}?`)) {
+            if (window.confirm(`Czy na pewno chcesz usunąć ${name}? `)) {
               dispatch({
                 type: "delete",
                 id: id
