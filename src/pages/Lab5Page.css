@@ -1,0 +1,231 @@
+.lab5-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.lab5-header {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.lab5-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.lab5-stats {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.lab5-stats ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.lab5-stats li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.lab5-table-container {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.lab5-table {
+  margin-bottom: 0;
+}
+
+.lab5-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lab5-table thead th {
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.lab5-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.lab5-table tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.lab5-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.user-link {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.user-link:hover {
+  color: #764ba2;
+  transform: translateX(5px);
+}
+
+.accordion-button {
+  background-color: #f8f9ff !important;
+  color: #667eea !important;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.accordion-body {
+  background-color: #f8f9ff;
+  color: #333;
+}
+
+.comments-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+.comments-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  color: white;
+}
+
+.table-header-dropdown .dropdown-toggle {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.table-header-dropdown .dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: white !important;
+}
+
+.table-header-dropdown .dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table-header-dropdown .dropdown-item {
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.table-header-dropdown .dropdown-item:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.loading-container {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+}
+
+.pagination-container {
+  margin-top: 2rem;
+}
+
+.pagination {
+  margin-bottom: 1rem;
+}
+
+.pagination .page-link {
+  color: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  margin: 0 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc;
+  border-color: #e0e0e0;
+}
+
+.table-footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9ff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .lab5-header {
+    padding: 1rem;
+  }
+  
+  .lab5-table-container {
+    padding: 0.5rem;
+  }
+  
+  .lab5-table thead th,
+  .lab5-table tbody td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

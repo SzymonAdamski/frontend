@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import AppContext from '../data/AppContext';
+import useData from '../hooks/useData';
 
 function MyContainer({ element: Element, data }) {
-  const { items } = useContext(AppContext);
+  const items = useData();
 
   return (
     <Container>

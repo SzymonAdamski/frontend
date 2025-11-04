@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card, Button, ButtonGroup, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import RatingBar from './RatingBar';
-import AppContext from '../data/AppContext';
+import useDispatch from '../hooks/useDispatch';
 import './PersonProfile.css';
 
 function PersonProfile({ id, name, email, phone, birthDate, className, rating = 0, isChecked = false }) {
-  const context = useContext(AppContext);
-  const dispatch = context.dispatch;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  //Edita ni ma jeszcze logika jest
   const handleEditClick = () => {
-    console.log(`Edytuj osobę: ${name} (ID: ${id})`);
-    // Tutaj będzie się implementować 
-    alert(`Formularz edycji dla ${name} nie ma`);
+    navigate(`/lab4/edit?id=${id}`);
   };
 
   return (

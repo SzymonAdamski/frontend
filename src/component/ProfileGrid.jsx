@@ -1,11 +1,9 @@
-import { useContext } from 'react';
 import ProfileCard from './ProfileCard';
-import AppContext from '../data/AppContext';
+import useData from '../hooks/useData';
 import './ProfileGrid.css';
 
 function ProfileGrid({ columns = 3 }) {
-  const context = useContext(AppContext);
-  const items = context.items;
+  const items = useData();
 
   // Tworzymy klasę Bootstrap dla kolumn na podstawie parametru columns
   const getColumnClass = () => {

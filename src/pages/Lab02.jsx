@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import ProfileCard from '../component/ProfileCard';
-import AppContext from '../data/AppContext';
+import useData from '../hooks/useData';
 
 function Lab02() {
   const { id } = useParams();
-  const context = useContext(AppContext);
-  const items = context.items;
+  const items = useData();
 
   useEffect(() => {
     if (id) {

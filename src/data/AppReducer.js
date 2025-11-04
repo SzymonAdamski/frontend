@@ -23,6 +23,18 @@ export default function AppReducer(state, action) {
             // Usuwa osobę z listy - tworzy nową tablicę bez wskazanego elementu
             return state.filter(person => person.id !== action.id);
         
+        case "add":
+            // Dodaje nową osobę do listy
+            return [...state, action.item];
+        
+        case "edit":
+            // Edytuje istniejącą osobę - aktualizuje dane osoby o wskazanym id
+            return state.map(person => 
+                person.id === action.id 
+                    ? { ...person, ...action.item }
+                    : person
+            );
+        
         default:
             return state;
     }
